@@ -1,0 +1,121 @@
+AllCops:
+  Exclude:
+    - 'public/**/*'
+    - 'lib/**/*'
+    - 'vendor/**/*'
+    - 'test/**/*'
+    - 'spec/**/*'
+    - 'bin/**/*'
+    - 'db/schema.rb'
+    - 'config/deploy/*'
+
+Rails:
+  Enabled: true
+
+Lint/DefEndAlignment:
+  Enabled: false
+
+Style/TrailingBlankLines:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Style/TrailingWhitespace:
+  Enabled: false
+
+Style/EmptyLineBetweenDefs:
+  Enabled: false
+
+Style/EmptyLines:
+  Enabled: false
+
+Style/EmptyLinesAroundAccessModifier:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Style/TrailingCommaInLiteral:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  Enabled: false
+
+Style/TrailingBlankLines:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Style/SpaceInsideBrackets:
+  Enabled: false
+
+Style/SignalException:
+  Enabled: false
+
+Style/Semicolon:
+  Enabled: false
+
+Style/RescueModifier:
+  Enabled: false
+
+Style/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Style/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Style/CommentAnnotation:
+  Enabled: false
+
+Style/ClassCheck:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/RedundantReturn:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/Next:
+  Enabled: false
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/NestedTernaryOperator:
+  Enabled: false
+
+Style/CaseIndentation:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 11

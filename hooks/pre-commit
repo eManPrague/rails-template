@@ -1,0 +1,6 @@
+#!/bin/sh
+
+FILES="$(git diff --cached --name-only --diff-filter=AMC | grep "\.rb$" | tr '\n' ' ')"
+if [ -n "$FILES" ]; then
+        bundle exec rubocop --fail-level warning ${FILES}
+fi
