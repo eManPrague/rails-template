@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :repo_url, ''
-BUILD_VERSION = "0.0.0/#{fetch(:stage}"
+BUILD_VERSION = "0.0.0/#{fetch(:stage)}"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
