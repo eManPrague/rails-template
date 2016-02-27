@@ -1,6 +1,14 @@
 # base and useful gems
 gem 'annotate'
 gem 'pry-rails'
+gem 'config'
+
+gem_group :development, :test do
+  gem 'byebug'
+  gem 'faker'
+  gem 'web-console'
+  gem 'spring'
+end
 
 # base commands
 run "echo -n > README.md"
@@ -18,6 +26,14 @@ if yes?("Do you want to write tests?") then
     gem 'simplecov'
     gem 'factory_girl_rails'
   end
+end
+
+if yes?("Do you want to use puma?") then
+  gem 'puma'
+elsif yes?("Do you want to use thin?")
+  gem 'thin'
+else yes?("Do you want to use unicorn")
+  gem 'unicorn'
 end
 
 # deployment tools
