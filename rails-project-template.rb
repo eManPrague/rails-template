@@ -14,6 +14,9 @@ end
 run "echo -n > README.md"
 run "echo -n > INSTALL.md"
 
+# add staging environment
+run "echo 'require Rails.root.join(\'config\', \'environments\', \'production\')' > config/environments/staging.rb"
+
 # remove unneeded files
 if no?("Do you want to use rdoc?") then
   run "rm README.rdoc"
