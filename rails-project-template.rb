@@ -5,9 +5,9 @@ gem 'config'
 
 gem_group :development, :test do
   gem 'byebug'
-  gem 'faker'
-  gem 'web-console'
   gem 'spring'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # base commands
@@ -20,12 +20,21 @@ if no?("Do you want to use rdoc?") then
 end
 
 # test libs
+tests = false
 if yes?("Do you want to write tests?") then
   gem_group :development, :test do
     gem "rspec-rails"
     gem 'simplecov'
     gem 'factory_girl_rails'
+    gem 'faker'
+    gem 'database_cleaner'
+    gem 'spring-commands-rspec'
+    gem 'guard-rspec'
+    gem 'capybara'
+    gem 'capybara-webkit'
   end
+  
+  tests = true
 end
 
 if yes?("Do you want to use puma?") then
@@ -45,7 +54,7 @@ if yes?("Do you want to use capistrano for deploy?") then
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   capistrano = true
-else yes?("Do you want to use mina for deploy?")
+elsif yes?("Do you want to use mina for deploy?")
   gem 'mina', '~> 0.3.8'
   gem 'mina-multistage', require: false
   mina = true
@@ -99,6 +108,11 @@ after_bundle do
     run "bundle exec cap install STAGES=staging,development,production"
     run "curl -o Capfile https://raw.githubusercontent.com/eManPrague/rails-template/master/Capfile"
     run "curl -o config/deploy.rb https://raw.githubusercontent.com/eManPrague/rails-template/master/config/deploy.cap.rb"
+  end
+
+  # Rspec + capybara tests
+  if tests
+    run "bundle exec rspec:install"
   end
 
   # git setup
