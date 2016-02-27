@@ -20,12 +20,12 @@ if no?("Do you want to use rdoc?") then
 end
 
 # Templating libraries
-if yes?("Do you want to use slim?")
+if yes?("Do you want to use SLIM instead of ERB?")
   gem 'slim-rails'
 end
 
 # test libs
-tests = false
+tests, ui_tests = false
 if yes?("Do you want to write tests?") then
   gem_group :development, :test do
     gem "rspec-rails"
@@ -35,8 +35,14 @@ if yes?("Do you want to write tests?") then
     gem 'database_cleaner'
     gem 'spring-commands-rspec'
     gem 'guard-rspec'
-    gem 'capybara'
-    gem 'capybara-webkit'
+  end
+  
+  if yes?("Do you want to write UI tests?")
+    gem_group :development, :test do
+      gem 'capybara'
+      gem 'capybara-webkit'
+    end
+    ui_tests = true
   end
   
   tests = true
