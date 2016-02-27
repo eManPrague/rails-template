@@ -123,7 +123,7 @@ after_bundle do
 
   # Rspec + capybara tests
   if tests
-    run "bundle exec rspec:install"
+    run "bundle exec rspec --init"
   end
 
   # git setup
