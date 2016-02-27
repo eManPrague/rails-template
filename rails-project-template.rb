@@ -19,6 +19,11 @@ if no?("Do you want to use rdoc?") then
   run "rm README.rdoc"
 end
 
+# Templating libraries
+if yes?("Do you want to use slim?")
+  gem 'slim-rails'
+end
+
 # test libs
 tests = false
 if yes?("Do you want to write tests?") then
