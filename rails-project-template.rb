@@ -8,6 +8,9 @@ gem_group :development, :test do
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
+  
+  # Show model validation errors in log
+  gem 'whiny_validation'
 end
 
 # base commands
