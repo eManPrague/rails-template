@@ -138,7 +138,8 @@ after_bundle do
   # install rubcop hook if rubocop turned on
   if rubocop == true then
     run "curl -o .git/hooks/pre-commit https://raw.githubusercontent.com/eManPrague/rails-template/master/hooks/pre-commit"
-    run "chmod +x .git/hooks/pre-commit"
+    run "curl -o git_hooks.sh https://raw.githubusercontent.com/eManPrague/rails-template/master/git_hooks.sh"
+    run "chmod +x .git/hooks/pre-commit git_hooks.sh"
     run "curl -o .rubocop.yml https://raw.githubusercontent.com/eManPrague/rails-template/master/.rubocop.yml"
   end
 
